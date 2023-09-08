@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <!-- Add minimal CSS styling here -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type='text'],
+      select,
+      input[type='submit'] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+      }
+      input[type='submit'] {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      input[type='submit']:hover {
+        background-color: #0056b3;
+      }
+      h2 {
+        margin-top: 20px;
+        color: #333;
+      }
+      p {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+
+    <!-- Form for user input -->
+    <form method="POST">
+      <label for="num1">Number 1:</label>
+      <input type="text" name="num1" required /><br />
+      <label for="num2">Number 2:</label>
+      <input type="text" name="num2" required /><br />
+      <label for="operation">Operation:</label>
+      <select name="operation">
+        <option value="addition">Addition</option>
+        <option value="subtraction">Subtraction</option>
+        <option value="multiplication">Multiplication</option>
+        <option value="division">Division</option></select
+      ><br />
+      <input type="submit" value="Calculate" />
+    </form>
+
+    <!-- Display the calculation result -->
+    {% if result %}
+    <h2>Result of {{ operation_name }}:</h2>
+    <p>{{ result }}</p>
+    {% endif %}
+  </body>
+</html>
